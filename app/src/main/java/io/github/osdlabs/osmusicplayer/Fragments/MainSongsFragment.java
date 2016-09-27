@@ -34,7 +34,7 @@ import io.github.osdlabs.osmusicplayer.R;
 
 public class MainSongsFragment extends Fragment {
 
-    RecyclerView recyclerView;
+    RecyclerView musicListRecyclerView;
     MainSongsAdapter adapter;
     List<MainSongsItemFormat> mainSongsItemFormatList = new ArrayList<>();
 
@@ -56,16 +56,17 @@ public class MainSongsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main_songs, container, false);
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.fragment_main_songs_rv);
+        musicListRecyclerView = (RecyclerView) view.findViewById(R.id.fragment_main_songs_rv);
         permissionCheck = ContextCompat.checkSelfPermission(getContext(),
                 Manifest.permission.READ_EXTERNAL_STORAGE);
         currentApi = Build.VERSION.SDK_INT;
 
 
         adapter = new MainSongsAdapter(getContext(), mainSongsItemFormatList);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(adapter);
+        musicListRecyclerView.setHasFixedSize(true);
+        musicListRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        musicListRecyclerView.setAdapter(adapter);
+
         if (currentApi < Build.VERSION_CODES.M) {
             populateList();
             adapter.notifyDataSetChanged();
@@ -104,6 +105,9 @@ public class MainSongsFragment extends Fragment {
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .show();
 
+        }else{
+            populateList();
+            adapter.notifyDataSetChanged();
         }
 
 
@@ -125,7 +129,6 @@ public class MainSongsFragment extends Fragment {
                     android.os.Process.killProcess(android.os.Process.myPid());
                     System.exit(0);
                 }
-                return;
             }
         }
     }
