@@ -1,4 +1,4 @@
-package io.github.osdlabs.osmusicplayer;
+package io.github.osdlabs.osmusicplayer.ItemFormats;
 
 /**
  * Created by vikramaditya on 1/9/16.

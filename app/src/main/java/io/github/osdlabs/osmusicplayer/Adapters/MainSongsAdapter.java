@@ -1,4 +1,4 @@
-package io.github.osdlabs.osmusicplayer;
+package io.github.osdlabs.osmusicplayer.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.List;
+
+import io.github.osdlabs.osmusicplayer.ItemFormats.MainSongsItemFormat;
+import io.github.osdlabs.osmusicplayer.R;
 
 /**
  * Created by vikramaditya on 1/9/16.

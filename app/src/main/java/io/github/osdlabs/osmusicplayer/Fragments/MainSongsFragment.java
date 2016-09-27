@@ -1,4 +1,4 @@
-package io.github.osdlabs.osmusicplayer;
+package io.github.osdlabs.osmusicplayer.Fragments;
 
 import android.Manifest;
 import android.content.ContentResolver;
@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -18,15 +17,16 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
+
+import io.github.osdlabs.osmusicplayer.Adapters.MainSongsAdapter;
+import io.github.osdlabs.osmusicplayer.ItemFormats.MainSongsItemFormat;
+import io.github.osdlabs.osmusicplayer.R;
 
 /**
  * Created by vikramaditya on 1/9/16.
